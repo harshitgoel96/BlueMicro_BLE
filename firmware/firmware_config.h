@@ -30,39 +30,39 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define MATRIX_SCAN 1
 #define SEND_KEYS 1
 
-#if KEYBOARD_SIDE == LEFT
-#define BLE_HID 1
-#define BLE_CENTRAL 1
-#define CENTRAL_COUNT 1
-#define PERIPHERAL_COUNT 1 //1  
-#define BLE_PERIPHERAL 0
-#define DEVICE_NAME DEVICE_NAME_L // override name
-#elif KEYBOARD_SIDE == RIGHT
-#define BLE_HID 0
-#define BLE_CENTRAL 0
-#define CENTRAL_COUNT 0
-#define PERIPHERAL_COUNT 1 //1  
-#define BLE_PERIPHERAL 1
-#define DEVICE_NAME DEVICE_NAME_R // override name
+#if KEYBOARD_SIDE == PRIMARY
+  #define BLE_HID 1
+  #define BLE_CENTRAL 1
+  #define CENTRAL_COUNT 1
+  #define PERIPHERAL_COUNT 1 //1  
+  #define BLE_PERIPHERAL 0
+  #define DEVICE_NAME DEVICE_NAME_P // override name
+#elif KEYBOARD_SIDE == SECONDARY
+  #define BLE_HID 0
+  #define BLE_CENTRAL 0
+  #define CENTRAL_COUNT 0
+  #define PERIPHERAL_COUNT 1 //1  
+  #define BLE_PERIPHERAL 1
+  #define DEVICE_NAME DEVICE_NAME_S // override name
 #elif KEYBOARD_SIDE == SINGLE
-#define BLE_HID 1
-#define BLE_CENTRAL 0
-#define CENTRAL_COUNT 0
-#define PERIPHERAL_COUNT 1 //1  
-#define BLE_PERIPHERAL 0
-#ifndef DEVICE_NAME 
-#define DEVICE_NAME DEVICE_NAME_M
+  #define BLE_HID 1
+  #define BLE_CENTRAL 0
+  #define CENTRAL_COUNT 0
+  #define PERIPHERAL_COUNT 1 //1  
+  #define BLE_PERIPHERAL 0
+  #ifndef DEVICE_NAME 
+  #define DEVICE_NAME DEVICE_NAME_M
 #endif
 #elif KEYBOARD_SIDE == TEST
-#define BLE_CENTRAL 0  /// 
-#define BLE_PERIPHERAL 0 /// 
-#define BLE_PAIRS 0  /// NOT SURE WHAT THIS ACTIVATES
-#define BLE_HID 1 //1 //  
-#define PERIPHERAL_COUNT 1 //1  
-#define CENTRAL_COUNT 0
-#ifndef DEVICE_NAME 
-#define DEVICE_NAME DEVICE_NAME_M
-#endif
+  #define BLE_CENTRAL 0  /// 
+  #define BLE_PERIPHERAL 0 /// 
+  #define BLE_PAIRS 0  /// NOT SURE WHAT THIS ACTIVATES
+  #define BLE_HID 1 //1 //  
+  #define PERIPHERAL_COUNT 1 //1  
+  #define CENTRAL_COUNT 0
+  #ifndef DEVICE_NAME 
+    #define DEVICE_NAME DEVICE_NAME_M
+  #endif
 #endif
 
 

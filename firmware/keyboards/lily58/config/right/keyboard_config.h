@@ -24,19 +24,19 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 
 //#define KEYBOARD_SIDE SINGLE
-#define KEYBOARD_SIDE RIGHT
+#define KEYBOARD_SIDE SECONDARY
 // CHANGE THIS FOR THE KEYBOARD TO MATCH WHAT IS BEING FLASHED. OPTIONS: LEFT  RIGHT  SINGLE
 
-#define DEVICE_NAME_R                        "Lily58_R"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_L                        "Lily58_L"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_M                        "Lily58BLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_S                        "Lily58_S"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_M                        "Lily58_M"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_P                        "Lily58BLE"                          /**< Name of device. Will be included in the advertising data. */
 
 #define DEVICE_MODEL                         "Lily58BLE_V1"                          /**< Name of device. Will be included in the advertising data. */
 
 #define MANUFACTURER_NAME                    "F_YUUCHI"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
-#if KEYBOARD_SIDE == RIGHT
+#if KEYBOARD_SIDE == SECONDARY
 #define KEYMAP( \
       R00, R01, R02, R03, R04, R05, \
       R10, R11, R12, R13, R14, R15, \

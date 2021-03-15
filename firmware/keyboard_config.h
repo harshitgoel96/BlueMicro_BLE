@@ -1,5 +1,5 @@
 /*
-Copyright 2018-2021 <Pierre Constantineau>
+Copyright 2018 <Pierre Constantineau>
 
 3-Clause BSD License
 
@@ -22,46 +22,52 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #include "hardware_config.h"
 
 
-#define KEYBOARD_SIDE SINGLE
+
+//#define KEYBOARD_SIDE SINGLE
+#define KEYBOARD_SIDE SECONDARY
 // CHANGE THIS FOR THE KEYBOARD TO MATCH WHAT IS BEING FLASHED. OPTIONS: LEFT  RIGHT  SINGLE
 
-#define DEVICE_NAME_R                         "ErgoTravelBLE_R"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_L                        "ErgoTravelBLE_L"                          /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_M                         "ErgoTravelBLE"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_S                        "Lily58_S"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_M                        "Lily58_M"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_P                        "Lily58BLE"                          /**< Name of device. Will be included in the advertising data. */
 
-#define DEVICE_MODEL                        "ErgoTravelBLE_V1"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_MODEL                         "Lily58BLE_V1"                          /**< Name of device. Will be included in the advertising data. */
 
-#define MANUFACTURER_NAME                   "JPConstantineau.com"                      /**< Manufacturer. Will be passed to Device Information Service. */
+#define MANUFACTURER_NAME                    "F_YUUCHI"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
-
-#if KEYBOARD_SIDE == RIGHT
+#if KEYBOARD_SIDE == SECONDARY
 #define KEYMAP( \
-      k00, k01, k02, k03, k04, k05, k06, \
-      k10, k11, k12, k13, k14, k15, k16, \
-      k20, k21, k22, k23, k24, k25, k26, \
-      k30, k31, k32, k33, k34, k35,  k36 \
-) \
-{ \
-    { k06, k05, k04, k03, k02, k01, k00 }, \
-    { k16, k15, k14, k13, k12, k11, k10 }, \
-    { k26, k25, k24, k23, k22, k21, k20 }, \
-    { k36, k35, k34, k33, k32, k31, k30 } \
-}
+      R00, R01, R02, R03, R04, R05, \
+      R10, R11, R12, R13, R14, R15, \
+      R20, R21, R22, R23, R24, R25, \
+  R45, R30, R31, R32, R33, R34, R35, \
+  R41, R42, R43, R44 \
+  ) \
+  { \
+    { R05, R04, R03, R02, R01, R00 }, \
+    { R15, R14, R13, R12, R11, R10 }, \
+    { R25, R24, R23, R22, R21, R20 }, \
+    { R35, R34, R33, R32, R31, R30 }, \
+    { KC_NO,R44,R43, R42, R41, R45 } \
+  }
 #else
 #define KEYMAP( \
-      k00, k01, k02, k03, k04, k05, k06, \
-      k10, k11, k12, k13, k14, k15, k16, \
-      k20, k21, k22, k23, k24, k25, k26, \
-      k30, k31, k32, k33, k34, k35,  k36 \
-) \
-{ \
-    { k00, k01, k02, k03, k04, k05, k06 }, \
-    { k10, k11, k12, k13, k14, k15, k16 }, \
-    { k20, k21, k22, k23, k24, k25, k26 }, \
-    { k30, k31, k32, k33, k34, k35, k36 } \
-} 
+  L00, L01, L02, L03, L04, L05,\
+  L10, L11, L12, L13, L14, L15, \
+  L20, L21, L22, L23, L24, L25,\
+  L30, L31, L32, L33, L34, L35, L45, \
+                 L41, L42, L43, L44\
+  ) \
+  { \
+    { L00, L01, L02, L03, L04, L05 }, \
+    { L10, L11, L12, L13, L14, L15 }, \
+    { L20, L21, L22, L23, L24, L25 }, \
+    { L30, L31, L32, L33, L34, L35 }, \
+    { KC_NO,L41,L42, L43, L44, L45 } \
+  } 
 
 #endif
 
 #endif /* KEYBOARD_CONFIG_H */
+

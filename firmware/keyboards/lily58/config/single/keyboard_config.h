@@ -36,7 +36,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define MANUFACTURER_NAME                    "F_YUUCHI"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
-#if KEYBOARD_SIDE == RIGHT
+#if KEYBOARD_SIDE == SECONDARY
 #define KEYMAP( \
       R00, R01, R02, R03, R04, R05, \
       R10, R11, R12, R13, R14, R15, \

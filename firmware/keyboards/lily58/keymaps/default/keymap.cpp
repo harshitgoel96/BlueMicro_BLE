@@ -40,7 +40,7 @@ void setupKeymap() {
 #endif
 
 
-#if KEYBOARD_SIDE == LEFT
+#if KEYBOARD_SIDE == PRIMARY
 
 
 std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
@@ -115,7 +115,7 @@ void setupKeymap() {
 
 
 
-#if KEYBOARD_SIDE == RIGHT
+#if KEYBOARD_SIDE==SECONDARY
 
 
 

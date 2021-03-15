@@ -1,5 +1,5 @@
 /*
-Copyright 2018-2021 <Pierre Constantineau>
+Copyright 2020-2021 <Pierre Constantineau>
 
 3-Clause BSD License
 
@@ -21,25 +21,54 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define HARDWARE_CONFIG_H
 #include "hardware_variants.h"
 
+
 /* HARDWARE DEFINITION*/
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 7
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 6
+#define MATRIX_ROW_PINS { 24, 32, 11, 36, 38 }
+#define MATRIX_COL_PINS { 2, 47, 45, 43, 10, 9 }
 
-#define MATRIX_ROW_PINS {13, 24, 9, 10 }
-#define MATRIX_COL_PINS {26, 29, 2, 45, 3, 28, 43 }
 #define UNUSED_PINS {}
-#define BACKLIGHT_LED_PIN 38 
-#define DEFAULT_PWM_VALUE 10000            // PWM intensity
-#define BACKLIGHT_PWM_ON 1
+
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
-#define BATTERY_TYPE BATT_LIPO
-#define VBAT_PIN  31
-#define VCC_PIN 12
-#define VCC_POLARITY_ON 1
 
-#define  STATUS_BLE_LED_PIN  19  //blue = 0.19
-#define  STATUS_KB_LED_PIN 17  //red = 0.17
+	#define BACKLIGHT_PWM_ON 0
+	#define WS2812B_LED_PIN 6
+	
+	#define WS2812B_LED_COUNT 12
+	#define WS2812B_LED_ON 1 
+       #define BATTERY_TYPE BATT_LIPO
+        #define VBAT_PIN  4
+        #define VCC_PIN 13
+        #define VCC_POLARITY_ON 0
+        #define  STATUS_BLE_LED_PIN  15  //blue = 0.15
+          //#define  STATUS_KB_LED_PIN 0  //no RED LED
+
+          //  OLED DEFINITION
+    #define I2C_SDA_PIN 17
+    #define I2C_SCK_PIN 20
+    #define DISPLAY_U8G2_CONSTRUCTOR U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C // see https://github.com/olikraus/u8g2/wiki/u8g2setupcpp for reference
     
+   /*     #define D3      6  
+        #define D2      8   
+        #define D1      17  
+        #define D0      20  
+        #define D4      22
+        #define C6      24
+        #define D7      32 //1.00  = 32+0
+        #define E6      11
+        #define B4      36 //1.04  = 32+4
+        #define B5      38 //1.06  = 32+6
+
+        #define F4      31
+        #define F5      29 
+        #define F6      2
+        #define F7      47 //1.15  = 32+15
+        #define B1      45 //1.13  = 32+13
+        #define B3      43 //1.11 = 32+11
+        #define B2      10
+        #define B6      9
+        #define NC      33 //1.01 = 32+1 // NC is for not connected....*/
 #endif /* HARDWARE_CONFIG_H */
